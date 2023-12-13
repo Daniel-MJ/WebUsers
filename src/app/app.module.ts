@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CalendarComponent } from './calendar/calendar.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [
     // no need to place any providers due to the `providedIn` flag...
