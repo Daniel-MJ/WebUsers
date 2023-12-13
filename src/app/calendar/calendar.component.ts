@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './calendar.component.css'
 })
 export class CalendarComponent {
-
+  title = "CALENDARIO"
 }
