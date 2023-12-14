@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../apirestlet.service';
+import { Insputssearch } from '../insputssearch'
 
 @Component({
   selector: 'app-search',
@@ -10,6 +11,7 @@ export class SearchComponent {
   title = 'Busqueda Por Parametros.';
   fechaInicial: string = "";
   fechaFinal: string = "";
+  actividades: Insputssearch[] = [];
 
   constructor(private apiService: ApiService) {}
 
@@ -18,13 +20,13 @@ export class SearchComponent {
     const fechaFinal = this.fechaFinal; // Reemplaza esto con la fecha recogida
 
     this.apiService.getActividadesPorFecha(fechaInicio, fechaFinal)
-      .then(actividades => {
+      .then((actividades: Insputssearch[]) => {
         // Manejar las actividades devueltas
-        console.log(actividades);
+        this.actividades = actividades;
       })
       .catch(error => {
         // Manejar el error si es necesario
-        console.error(error);
+        console.error('Error al obtener actividades:',error);
       });
   }
 }

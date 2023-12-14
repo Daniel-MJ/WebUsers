@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Insputssearch } from './insputssearch'; // Asegúrate de que la ruta del archivo sea correcta
+import { Insputssearch } from './insputssearch';
 
 @Injectable({
   providedIn: 'root'
