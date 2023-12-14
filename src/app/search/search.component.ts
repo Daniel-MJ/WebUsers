@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './search.component.css'
 })
 export class SearchComponent {
-  title = 'BUSCAR';
+  title = 'Busqueda Por Parametros.';
+  fechaInicial: string = "";
+  fechaFinal: string = "";   
 }

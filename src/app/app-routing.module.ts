@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchComponent } from './search/search.component';
-//import { CalendarComponent } from './calendar/calendar.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 const routes: Routes = [
-  { path: 'search', component: SearchComponent }
+  { path: 'search', component: SearchComponent },
+  { path: 'calendar', component: CalendarComponent }
 ];
 
 @NgModule({
