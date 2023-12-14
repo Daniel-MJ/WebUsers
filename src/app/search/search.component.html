@@ -14,7 +14,8 @@
     <h2>Actividades Encontradas:</h2>
     <ul>
       <li *ngFor="let actividad of actividades">
-        {{ actividad.titulo }} - {{ actividad.ponente }}
+        <!--{{ actividad.titulo }} - {{ actividad.ponente }}-->
+        <app-activities [actividad]="actividad"></app-activities>
       </li>
     </ul>
   </div>

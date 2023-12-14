@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../apirestlet.service';
-import { Insputssearch } from '../insputssearch'
+import { Insputssearch } from '../insputssearch';
+import { ActividadComponent } from '../activities/activities.component';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrl: './search.component.css'
+  styleUrl: './search.component.css',
 })
 export class SearchComponent {
   title = 'Busqueda Por Parametros.';
