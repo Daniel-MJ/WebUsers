@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+
 
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
@@ -11,15 +11,15 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SearchComponent,
-  ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule
+
+  ],
+  declarations: [
+    AppComponent,
+    SearchComponent,
   ],
   providers: [
     // no need to place any providers due to the `providedIn` flag...
