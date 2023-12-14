@@ -2,8 +2,9 @@
 <div>
   <label for="fechaInicial">Fecha Inicial:</label>
   <input type="date" id="fechaInicial" [(ngModel)]="fechaInicial">
-</div>
-<div>
+
   <label for="fechaFinal">Fecha Final:</label>
   <input type="date" id="fechaFinal" [(ngModel)]="fechaFinal">
+
+  <button (click)="buscarActividades()">Buscar Actividades</button>
 </div>
