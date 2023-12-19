@@ -1,5 +1,8 @@
 <section class="actividad">
     <h2 class="actividad-titulo">{{ actividad.titulo }}</h2>
     <p class="actividad-ponente">{{ actividad.ponente }}</p>
-    <!-- Puedes mostrar otros detalles de la actividad según tus necesidades -->
+    <p class="actividad-fechaInicio">{{ actividad.fechaInicio.$date | date: 'medium' }}</p>
+    <p class="actividad-fechaFinal">{{ actividad.fechaFinal.$date | date: 'medium' }}</p>
+    <p class="actividad-lugar">aula: {{ actividad.lugar}}</p>
+    <!--Puedes mostrar otros detalles de la actividad según tus necesidades -->
   </section>

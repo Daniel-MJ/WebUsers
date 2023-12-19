@@ -8,4 +8,5 @@ import { Insputssearch } from '../insputssearch';
 })
 export class ActividadComponent {
   @Input() actividad!: Insputssearch;
+
 }

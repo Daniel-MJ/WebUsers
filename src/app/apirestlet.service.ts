@@ -18,7 +18,19 @@ export class ApiService {
     const data = await fetch(url);
     return await data.json() ?? [];
   }
+
+  async getActividadesPorLugar(lugar: String): Promise<Insputssearch[]> {
+    const url = `${this.baseSearchUrl}?METODO=forPlace&lugar=${lugar}`;
+    const data = await fetch(url);
+    return await data.json() ?? [];
+  }
   
+  async getActividadesPorCategoria(categoria: String): Promise<Insputssearch[]> {
+    const url = `${this.baseSearchUrl}?METODO=forCategory&categoria=${categoria}`;
+    const data = await fetch(url);
+    return await data.json() ?? [];
+  }
+
   async getActividadById(id: number): Promise<Insputssearch | undefined> {
     const data = await fetch(`${this.baseSearchUrl}/${id}`);
     return await data.json() ?? {};
