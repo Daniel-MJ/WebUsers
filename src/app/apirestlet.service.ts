@@ -6,7 +6,7 @@ import { Insputssearch } from './insputssearch';
 })
 export class ApiService {
 
-  baseSearchUrl = 'http://localhost:8182/ApiServerWeb/searchActivities';
+  baseSearchUrl = 'https://nuevoUsuario:nuevaContrasena@localhost:8183/ApiServerWeb/searchActivities';
 
   async getAllActividades(): Promise<Insputssearch[]> {
     const data = await fetch(this.baseSearchUrl);
