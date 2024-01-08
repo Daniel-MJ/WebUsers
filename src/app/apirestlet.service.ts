@@ -15,7 +15,14 @@ export class ApiService {
 
   async getActividadesPorFecha(fechaInicio: String, fechaFinal: String): Promise<Insputssearch[]> {
     const url = `${this.baseSearchUrl}?METODO=forDate&fechaInicio=${fechaInicio}&fechaFinal=${fechaFinal}`;
-    const data = await fetch(url);
+    const data = await fetch(url, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Authorization': 'Basic ' + btoa('nuevoUsuario:nuevaContrasena')
+      }
+
+    });
     return await data.json() ?? [];
   }
 
