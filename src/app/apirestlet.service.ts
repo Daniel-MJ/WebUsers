@@ -6,7 +6,7 @@ import { Insputssearch } from './insputssearch';
 })
 export class ApiService {
 
-  baseSearchUrl = 'https://nuevoUsuario:nuevaContrasena@localhost:8183/ApiServerWeb/searchActivities';
+  baseSearchUrl = 'https://localhost:8183/ApiServerWeb/searchActivities';
 
   async getAllActividades(): Promise<Insputssearch[]> {
     const data = await fetch(this.baseSearchUrl);
@@ -28,18 +28,40 @@ export class ApiService {
 
   async getActividadesPorLugar(lugar: String): Promise<Insputssearch[]> {
     const url = `${this.baseSearchUrl}?METODO=forPlace&lugar=${lugar}`;
-    const data = await fetch(url);
+    const data = await fetch(url, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Authorization': 'Basic ' + btoa('nuevoUsuario:nuevaContrasena')
+      }
+
+    });
     return await data.json() ?? [];
   }
   
   async getActividadesPorCategoria(categoria: String): Promise<Insputssearch[]> {
     const url = `${this.baseSearchUrl}?METODO=forCategory&categoria=${categoria}`;
-    const data = await fetch(url);
+    const data = await fetch(url, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Authorization': 'Basic ' + btoa('nuevoUsuario:nuevaContrasena')
+      }
+
+    });
     return await data.json() ?? [];
   }
 
   async getActividadById(id: number): Promise<Insputssearch | undefined> {
-    const data = await fetch(`${this.baseSearchUrl}/${id}`);
+    const url = `${this.baseSearchUrl}/${id}`;
+    const data = await fetch(url, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Authorization': 'Basic ' + btoa('nuevoUsuario:nuevaContrasena')
+      }
+
+    });
     return await data.json() ?? {};
   }
 
