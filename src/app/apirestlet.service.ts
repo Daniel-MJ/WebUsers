@@ -19,7 +19,7 @@ export class ApiService {
       method: 'GET',
       credentials: 'include',
       headers: {
-        'Authorization': 'Basic ' + btoa('nuevoUsuario:nuevaContrasena')
+        'Authorization': 'Basic ' + btoa('nuevoUsuario1:nuevaContrasena'),
       }
 
     });
@@ -30,9 +30,10 @@ export class ApiService {
     const url = `${this.baseSearchUrl}?METODO=forPlace&lugar=${lugar}`;
     const data = await fetch(url, {
       method: 'GET',
+      mode:'cors',
       credentials: 'include',
       headers: {
-        'Authorization': 'Basic ' + btoa('nuevoUsuario:nuevaContrasena')
+        'Authorization': 'Basic ' + btoa('nuevoUsuario1:nuevaContrasena')
       }
 
     });
