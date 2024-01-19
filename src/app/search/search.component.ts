@@ -22,8 +22,7 @@ export class SearchComponent {
   buscarActividadesPorFecha() {
     const fechaInicio = this.fechaInicial // Reemplaza esto con la fecha recogida
     const fechaFinal = this.fechaFinal; // Reemplaza esto con la fecha recogida
-    const lugar = this.lugar;
-    const categoria = this.categoria;
+
 
     this.apiService.getActividadesPorFecha(fechaInicio, fechaFinal)
       .subscribe(
@@ -40,7 +39,7 @@ export class SearchComponent {
   }
 
   buscarActividadesPorLugar() {
-    const lugar = this.lugar // Reemplaza esto con la fecha recogida
+    const lugar = this.lugar // Reemplaza esto con el lugar recogido
 
     this.apiService.getActividadesPorLugar(lugar)
       .subscribe((actividades: Insputssearch[]) => {
@@ -55,7 +54,7 @@ export class SearchComponent {
   }
 
   buscarActividadesPorCategoria() {
-    const categoria = this.selectedCategoria // Reemplaza esto con la fecha recogida
+    const categoria = this.selectedCategoria // Reemplaza esto con la categoria recogida
 
     this.apiService.getActividadesPorCategoria(categoria)
       .subscribe((actividades: Insputssearch[]) => {
