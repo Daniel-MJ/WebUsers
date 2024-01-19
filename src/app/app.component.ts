@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ETS. INGENIERÍAS INFORMÁTICA Y DE TELECOMUNICACIÓN';
+  title = 'Actividades ETSIIT';
 }
