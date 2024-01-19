@@ -3,3 +3,13 @@
     border: 1px solid #e70707;
     margin-bottom: 20px;
   }
+
+  .actividades-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Crea 4 columnas */
+    gap: 1px; /* Ajusta el espacio entre las columnas y filas según tus preferencias */
+  }
+
+  .actividad-item {
+    margin-bottom: 8px; /* Ajusta el espacio entre las filas según tus preferencias */
+  }

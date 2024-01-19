@@ -26,14 +26,16 @@ export class SearchComponent {
     const categoria = this.categoria;
 
     this.apiService.getActividadesPorFecha(fechaInicio, fechaFinal)
-      .then((actividades: Insputssearch[]) => {
-        // Manejar las actividades devueltas
-        this.actividades = actividades;
-      })
-      .catch(error => {
-        // Manejar el error si es necesario
-        console.error('Error al obtener actividades:',error);
-      });
+      .subscribe(
+        (actividades: Insputssearch[]) => {
+          // Manejar las actividades devueltas
+          this.actividades = actividades;
+        },
+        (error: any) => {
+          // Manejar el error si es necesario
+          console.error('Error al obtener actividades:', error);
+        }
+      );
 
   }
 
@@ -41,27 +43,29 @@ export class SearchComponent {
     const lugar = this.lugar // Reemplaza esto con la fecha recogida
 
     this.apiService.getActividadesPorLugar(lugar)
-      .then((actividades: Insputssearch[]) => {
+      .subscribe((actividades: Insputssearch[]) => {
         // Manejar las actividades devueltas
         this.actividades = actividades;
-      })
-      .catch(error => {
+      },
+      (error: any) => {
         // Manejar el error si es necesario
-        console.error('Error al obtener actividades:',error);
-      });
+        console.error('Error al obtener actividades:', error);
+      }
+    );
   }
 
   buscarActividadesPorCategoria() {
     const categoria = this.selectedCategoria // Reemplaza esto con la fecha recogida
 
     this.apiService.getActividadesPorCategoria(categoria)
-      .then((actividades: Insputssearch[]) => {
+      .subscribe((actividades: Insputssearch[]) => {
         // Manejar las actividades devueltas
         this.actividades = actividades;
-      })
-      .catch(error => {
+      },
+      (error: any) => {
         // Manejar el error si es necesario
         console.error('Error al obtener actividades:',error);
-      });
+      }
+    );
   }
 }
