@@ -59,5 +59,4 @@ export class ApiService {
     return await data.json() ?? {};
   }
 
-  // Puedes agregar más métodos según sea necesario para interactuar con tu API RESTLET
 }
