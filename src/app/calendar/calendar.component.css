@@ -1,0 +1,98 @@
+:host {
+    display: block;
+  }
+  
+  .row {
+    margin-bottom: 20px;
+  }
+  
+  button {
+    margin-right: 5px;
+  }
+  
+  
+  /* Estilos adicionales para mejorar la apariencia del calendario */
+  .cal-day {
+    border: 1px solid #e1e1e1;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .cal-day:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  .cal-event {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+  }
+  
+  .cal-event:hover {
+    background-color: #0056b3;
+  }
+  
+/* Estilos específicos para la vista de mes */
+.mwl-calendar-month-view {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  
+    th {
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #e1e1e1;
+      background-color: #f8f8f8;
+    }
+  
+    td {
+      height: 100px;
+      vertical-align: top;
+      border: 1px solid #e1e1e1;
+      width: calc(100% / 7); /* Ajusta el ancho de las celdas para que haya 7 columnas en total */
+      box-sizing: border-box; /* Asegura que el ancho incluya el borde */
+    }
+  }
+  
+  
+  /* Estilos específicos para la vista de semana */
+  .mwl-calendar-week-view table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .mwl-calendar-week-view th,
+  .mwl-calendar-week-view td {
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    text-align: center;
+  }
+  
+  .mwl-calendar-week-view td {
+    height: 50px;
+    vertical-align: top;
+  }
+  
+  /* Estilos específicos para la vista de día */
+  .mwl-calendar-day-view table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .mwl-calendar-day-view th,
+  .mwl-calendar-day-view td {
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    text-align: center;
+  }
+  
+  .mwl-calendar-day-view td {
+    height: 100px;
+    vertical-align: top;
+  }
+  
+  

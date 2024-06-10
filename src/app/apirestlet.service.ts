@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  baseSearchUrl = 'https://localhost:8183/ApiServerWeb/searchActivities';
+  baseSearchUrl = 'https://localhost:8183/ApiUserWeb/searchActivities';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -21,19 +21,17 @@ export class ApiService {
     const url = `${this.baseSearchUrl}?METODO=forDate&fechaInicio=${fechaInicio}&fechaFinal=${fechaFinal}`;
     const headers  = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Basic ' + btoa('nuevoUsuario:nuevaContrasena'),
     });
 
-    return this.httpClient.get<Insputssearch[]>(url,{ headers, withCredentials: true });
+    return this.httpClient.get<Insputssearch[]>(url,{ headers });
   }
 
   getActividadesPorLugar(lugar: String): Observable<Insputssearch[]> {
     const url = `${this.baseSearchUrl}?METODO=forPlace&lugar=${lugar}`;
     const headers  = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Basic ' + btoa('nuevoUsuario:nuevaContrasena'),
     });
-      return this.httpClient.get<Insputssearch[]>(url,{ headers, withCredentials: true });
+      return this.httpClient.get<Insputssearch[]>(url,{ headers });
     
   }
   
@@ -41,9 +39,16 @@ export class ApiService {
     const url = `${this.baseSearchUrl}?METODO=forCategory&categoria=${categoria}`;
     const headers  = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Basic ' + btoa('nuevoUsuario:nuevaContrasena'),
     });
-      return this.httpClient.get<Insputssearch[]>(url,{ headers, withCredentials: true });
+      return this.httpClient.get<Insputssearch[]>(url,{ headers });
+  }
+
+  getActividades(): Observable<Insputssearch[]> {
+    const url = `${this.baseSearchUrl}?METODO=All`;
+    const headers  = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+      return this.httpClient.get<Insputssearch[]>(url,{ headers });
   }
 
   async getActividadById(id: number): Promise<Insputssearch | undefined> {
